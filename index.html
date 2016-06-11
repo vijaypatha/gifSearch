@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="gifChat">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>GifChat</title>
+    <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body ng-controller="gifController">
+    <h1>Is it working: {{test}}</h1>
+
+    <div class="serachBar">
+      <input type="text" placeholder="Chat Message" ng-model="chatText">
+      <button type="button" ng-click="getDataFromService()">Send</button>
+    </div>
+    <div class="" ng-repeat="gifs in dataToView">
+      <img ng-src="{{gifs.images.downsized_large.url}}" />
+      <!-- PATH is IMP -->
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="./scripts/app.js" charset="utf-8"></script>
+    <script src="./scripts/gifController.js" charset="utf-8"></script>
+    <script src="./scripts/gifService.js" charset="utf-8"></script>
+</body>
+
+</html>
